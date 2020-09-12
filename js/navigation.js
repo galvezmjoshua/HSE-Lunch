@@ -36,7 +36,6 @@ function display(screen) {
     document.getElementById(scr).style.display = "none";
   });
   document.getElementById(screen).style.display = "block";
-  console.log(screenStack.length)
 }
 
 function updateHeader(name) {
