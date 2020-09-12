@@ -5,7 +5,7 @@ const os = require('os')
 
 // Config
 const config = require('config')
-const PORT = config.get('PORT')
+const PORT = process.env.PORT || 51000;
 app.set('view engine', 'ejs')
 
 //Routing
