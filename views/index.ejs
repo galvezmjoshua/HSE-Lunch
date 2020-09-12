@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
+    <link rel="stylesheet" type="text/css" href="/styling/style.css">
+    <link rel="stylesheet" type="text/css" href="/styling/allLinesScreen.css">
+    <link rel="stylesheet" type="text/css" href="/styling/selectedLineScreen.css">
+    <link rel="stylesheet" type="text/css" href="/styling/creditsScreen.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <script src="js/data.js"></script>
+    <script src="js/navigation.js"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/charts/loader.js"></script>
+    <script src="js/classes/LunchSheets.js"></script>
+    <script src="js/classes/main.js"></script>
+    <script src="js/classes/LunchArray.js"></script>
+    <script src="js/classes/LunchLine.js"></script>
+    <meta name="theme-color" content="#FAFAFA" />
+    <meta
+      name="apple-mobile-web-app-capable"
+      content="yes"
+    >
+    <meta
+      name="apple-mobile-web-app-status-bar-style"
+      content="default"
+    >
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/logo192.png" />
+    <!--
+      manifest.json provides metadata used when your web app is installed on a
+      user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
+    -->
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <!--
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+      Notice the use of %PUBLIC_URL% in the tags above.
+      It will be replaced with the URL of the `public` folder during the build.
+      Only files inside the `public` folder can be referenced from the HTML.
+
+      Unlike "/favicon.ico" or "favicon.ico", "%PUBLIC_URL%/favicon.ico" will
+      work correctly both with client-side routing and a non-root public URL.
+      Learn how to configure a non-root public URL by running `npm run build`.
+    -->
+    <title>HSE Lunch</title>
+  </head>
+  <body class="content">
+    <script>
+      var colorTheme = <%- JSON.stringify(colorTheme) %>;
+      if(colorTheme == "dark"){
+        document.documentElement.setAttribute('data-theme', 'dark');
+      } else {
+          document.documentElement.setAttribute('data-theme', 'light');
+      }
+    </script>
+    <div>
+      <div class="header">
+        <h1 class="headerText" id="header">Loading</h1>
+      </div>
+
+      <div class="container" id="allLinesScreen">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="lineButton" onclick="goTo('Monday')">
+          <div class="lineButtonText" id="mondayButton">Monday</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="mondayLineEntrees">Loading...</div>
+
+        <div class="lineButton" onclick="goTo('Tuesday')">
+          <div class="lineButtonText" id="tuesdayButton">Tuesday</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="tuesdayLineEntrees">Loading...</div>
+
+        <div class="lineButton" onclick="goTo('Wednesday')">
+          <div class="lineButtonText" id="wednesdayButton">Wednesday</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="wednesdayLineEntrees">Loading...</div>
+
+        <div class="lineButton" onclick="goTo('Thursday')">
+          <div class="lineButtonText" id="thursdayButton">Thursday</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="thursdayLineEntrees">Loading...</div>
+
+        <div class="lineButton" onclick="goTo('Friday')">
+          <div class="lineButtonText" id="fridayButton">Friday</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="fridayLineEntrees">Loading...</div>
+
+        <div class="lineButton" onclick="goTo('Breakfast')">
+          <div class="lineButtonText" id="breakfastButton">Breakfast</div>
+          <img class="lineButtonImage" src="images/rightArrow.svg" alt="Arrow">
+        </div>
+        <div class="lineItems" id="breakfastLineEntrees">Loading...</div>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+      <div class="container" id="selectedLineScreen" style="display: none;">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="stickyButton" onclick="goBack()">Go Back</div>
+
+        <div class="dayText" id="week1Row">Week 1</div>
+        <div class="itemType" id="week1EntreeText">Entrees</div>
+        <div class="items" id="week1EntreeItems">Loading...</div>
+        <div class="itemType" id="week1VegText">Vegetables</div>
+        <div class="items" id="week1VegItems">Loading...</div>
+        <div class="itemType" id="week1FruitText">Fruits</div>
+        <div class="items" id="week1FruitItems">Loading...</div>
+
+        <div style="width:100%; height:5.5vh"></div>
+
+        <div class="dayText" id="week2Row">Week 2</div>
+        <div class="itemType" id="week2EntreeText">Entrees</div>
+        <div class="items" id="week2EntreeItems">Loading...</div>
+        <div class="itemType" id="week2VegText">Vegetables</div>
+        <div class="items" id="week2VegItems">Loading...</div>
+        <div class="itemType" id="week2FruitText">Fruits</div>
+        <div class="items" id="week2FruitItems">Loading...</div>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+      <div class="container" id="breakfastScreen" style="display: none;">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="stickyButton" onclick="goBack()">Go Back</div>
+
+        <div class="dayText" id="mondayRow">Monday</div>
+        <div class="items" id="mondayEntreeItems">Loading...</div>
+
+        <div class="dayText" id="tuesdayRow">Tuesday</div>
+        <div class="items" id="tuesdayEntreeItems">Loading...</div>
+
+        <div class="dayText" id="wednesdayRow">Wednesday</div>
+        <div class="items" id="wednesdayEntreeItems">Loading...</div>
+
+        <div class="dayText" id="thursdayRow">Thursday</div>
+        <div class="items" id="thursdayEntreeItems">Loading...</div>
+
+        <div class="dayText" id="fridayRow">Friday</div>
+        <div class="items" id="fridayEntreeItems">Loading...</div>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+      <div class="container center" id="creditsScreen" style="display: none;">
+        <div class="stickyButton" onclick="goBack()">Go Back</div>
+        Created by Ankit Joju and Joshua Galvez</br>
+        Icons sourced from flaticon.com
+      </div>
+    </div>
+  </body>
+</html>

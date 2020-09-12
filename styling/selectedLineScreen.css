@@ -1,0 +1,77 @@
+@media screen and (orientation:landscape) {
+  .dayText {
+    font-size: 6vw;
+    color: var(--select-color);
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+  }
+  .itemType {
+    font-size: 5vw;
+    font-weight: bold;
+    color: var(--header-text-color);
+    text-align: left;
+    width: 96vw;
+    margin-left: 4vw;
+  }
+  .items {
+    font-size: 4.5vw;
+    color: var(--font-color);
+    text-align: left;
+    width: 94vw;
+    margin-left: 6vw;
+  }
+  .stickyButton {
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    padding-left: 5vw;
+    font-size: 3vh;
+    background-color: #004794ad;
+    color: white;
+    position:sticky;
+    position: -webkit-sticky;
+    top: 8vh;
+  }
+  .stickyButton:hover {
+    background-color: #4777D190;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  .dayText {
+    font-size: 6vw;
+    color: var(--select-color);
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+    margin-left: 2vw;
+  }
+
+  .itemType {
+    font-size: 4vw;
+    font-weight: bold;
+    color: var(--header-text-color);
+    text-align: left;
+    width: 80vw;
+    margin-left: 4vw;
+  }
+  .items {
+    font-size: 5.5vw;
+    color: var(--font-color);
+    text-align: left;
+    width: 80vw;
+    margin-left: 6vw;
+  }
+  .stickyButton {
+    width: 25vw;
+    padding-bottom: 1vw;
+    padding-top: 1vw;
+    padding-left: 5vw;
+    font-size: 3vh;
+    background-color: #004794ad;
+    color: white;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 8vh;
+  }
+}

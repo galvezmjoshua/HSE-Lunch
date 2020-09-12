@@ -1,0 +1,62 @@
+@media screen and (orientation:landscape) {
+  .lineButton {
+    font-size: 6vw;
+    display: flex;
+    flex-direction: row;
+  }
+  .lineButton:hover {
+    background-color: #E6E6FF;
+  }
+  .lineButtonText {
+    font-size: 100%;
+    color: var(--select-color);
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+  }
+  .lineButtonImage {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    height: 5.7vw;
+    width: 9vw;
+  }
+  .lineItems {
+    font-size: 5vw;
+    color: var(--font-color);
+    text-align: left;
+    width: 96vw;
+    margin-left: 4vw;
+  }
+}
+
+@media screen and (orientation:portrait) {
+  .lineButton {
+    font-size: 6vw;
+    display: flex;
+    flex-direction: row;
+    margin-left: 2vw;
+  }
+  .lineButtonText {
+    font-size: 100%;
+    color: var(--select-color);
+    text-align: left;
+    font-weight: bold;
+    display: flex;
+  }
+  .lineButtonImage {
+    margin-top: auto;
+    margin-bottom: auto;
+    margin-left: auto;
+    height: 5.5vw;
+    width: 9vw;
+  }
+  .lineItems {
+    font-size: 5vw;
+    color: var(--font-color);
+    text-align: left;
+    width: 80vw;
+    margin-left: 5vw;
+  }
+
+}
