@@ -1,37 +1,20 @@
 {
-  "name": "hselunch",
-  "version": "0.1.0",
-  "private": true,
+  "name": "hseschedule",
+  "version": "2.0.0",
+  "main": "app.js",
   "dependencies": {
-    "@testing-library/jest-dom": "^4.2.4",
-    "@testing-library/react": "^9.3.2",
-    "@testing-library/user-event": "^7.1.2",
-    "config": "^3.3.0",
-    "ejs": "^3.1.5",
     "express": "^4.17.1",
-    "react": "^16.13.1",
-    "react-dom": "^16.13.1",
-    "react-scripts": "^3.4.3"
+    "moment-timezone": "^0.5.31",
+    "nedb": "^1.8.0",
+    "socket.io": "^2.3.0",
+    "underscore": "^1.10.2"
+  },
+  "engines": {
+    "node": "13.10.x"
   },
   "scripts": {
-    "start": "react-scripts start",
-    "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "start": "node app.js"
   },
-  "eslintConfig": {
-    "extends": "react-app"
-  },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  }
+  "author": "Isaac Robbins",
+  "license": "MIT"
 }
