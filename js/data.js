@@ -9,6 +9,7 @@ function update() {
     case "breakfastScreen":
       updateSelectedLine(currentLine)
       returnForEachDay(brk)
+      updateHeader('Breakfast')
       break;
     default:
       updateAllLines()
@@ -29,6 +30,7 @@ function updateAllLines() {
   returnEntrees("thursdayLineEntrees", week, thur)
   returnEntrees("fridayLineEntrees", week, fri)
   returnEntrees("breakfastLineEntrees", day, brk)
+  document.getElementById('breakfastButton').innerHTML = 'Breakfast (' + getDayName() + ')';
 }
 
 function updateSelectedLine(line) {
@@ -71,19 +73,19 @@ function updateSelectedLine(line) {
 
 function getDayName() {
   if (day == 1) {
-    return "Monday"
+    return "Mon"
   }
   if (day == 2) {
-    return "Tuesday"
+    return "Tue"
   }
   if (day == 3) {
-    return "Wednesday"
+    return "Wed"
   }
   if (day == 4) {
-    return "Thursday"
+    return "Thur"
   }
   if (day == 5) {
-    return "Friday"
+    return "Fri"
   }
   return "Next Monday"
 }
