@@ -29,7 +29,7 @@ function updateAllLines() {
   returnEntrees("wednesdayLineEntrees", week, wed)
   returnEntrees("thursdayLineEntrees", week, thur)
   returnEntrees("fridayLineEntrees", week, fri)
-  returnEntrees("breakfastLineEntrees", day, brk)
+  returnEntrees("breakfastLineEntrees", day - 1, brk)
   document.getElementById('breakfastButton').innerHTML = 'Breakfast (' + getDayName() + ')';
 }
 
@@ -125,7 +125,7 @@ function returnForEachDay(line) {
 }
 
 function returnEntrees(divItem, d, s){
-  if((d > 0 && d < 3) || (s === brk && d < 5)) {
+  if((d > 0 && d < 3) || (s === brk && d > 0 && d < 5)) {
     document.getElementById(divItem).innerHTML = s["entrees"][d].replace(/\//gi, "<br>");
   } else {
     document.getElementById(divItem).innerHTML = s["entrees"][0].replace(/\//gi, "<br>");
