@@ -5,6 +5,7 @@
     text-align: left;
     font-weight: bold;
     display: flex;
+    padding-left: 1vw;
   }
   .itemType {
     font-size: 5vw;
@@ -39,7 +40,7 @@
 
 @media screen and (orientation:portrait) {
   .dayText {
-    font-size: 6vw;
+    font-size: 7vw;
     color: var(--select-color);
     text-align: left;
     font-weight: bold;
@@ -48,7 +49,7 @@
   }
 
   .itemType {
-    font-size: 4vw;
+    font-size: 6vw;
     font-weight: bold;
     color: var(--header-text-color);
     text-align: left;
@@ -67,7 +68,7 @@
     padding-bottom: 1vw;
     padding-top: 1vw;
     padding-left: 5vw;
-    font-size: 3vh;
+    font-size: 5vw;
     background-color: #004794ad;
     color: white;
     position: sticky;
