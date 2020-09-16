@@ -7,6 +7,7 @@
      --highlight-color: #1158A5;
      --header-text-color: #a3bbff;
      --bs-background-color: #4d4d4d;
+     --hover-color: #e6f0ff3b;
 }
  [data-theme="light"] {
      --nav-color: #004794;
@@ -17,6 +18,7 @@
      --highlight-color: #87CEFA;
      --header-text-color: #6698FF;
      --bs-background-color: #ededed;
+     --hover-color: #E6E6FF;
 }
 
 .content {

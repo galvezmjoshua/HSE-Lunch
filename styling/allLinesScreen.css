@@ -6,7 +6,7 @@
     padding-left: 1vw;
   }
   .lineButton:hover {
-    background-color: #E6E6FF;
+    background-color: var(--hover-color);
   }
   .lineButtonText {
     font-size: 100%;
@@ -19,7 +19,7 @@
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
-    height: 4.7vw;
+    height: 4.5vw;
     width: 9vw;
   }
   .lineItems {
