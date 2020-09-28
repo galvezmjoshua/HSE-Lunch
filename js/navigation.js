@@ -1,6 +1,6 @@
 var screenStack = ["allLinesScreen"]
-var screens = ["allLinesScreen", "selectedLineScreen", "breakfastScreen"];
-var screenNames = ["Home", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Breakfast"];
+var screens = ["allLinesScreen", "selectedLineScreen", "breakfastScreen", "creditsScreen"];
+var screenNames = ["Home", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Breakfast", "Credits"];
 var currentLine;
 
 function goTo(name) { // Takes a screen name value.
@@ -15,9 +15,13 @@ function goTo(name) { // Takes a screen name value.
     display(screenStack[screenStack.length - 1]) // Displays selectedLineScreen.
     currentLine = name; // Updates currentLine.
 
-  } else if (i == 6) { // For creditsScreen.
-    screenStack.push("breakfastScreen") // Adds creditsScreen to the top of stack.
+  } else if (i == 6) { // For breakfastScreen.
+    screenStack.push("breakfastScreen") // Adds breakfastScreen to the top of stack.
+    display(screenStack[screenStack.length - 1]) // Displays breakfastScreen.
+  } else if (i == 7) { // For creditsScreen.
+    screenStack.push("creditsScreen") // Adds creditsScreen to the top of stack.
     display(screenStack[screenStack.length - 1]) // Displays creditsScreen.
+    document.getElementById("infoIcon").style.visibility = "hidden";
   } else {
 
   }
@@ -25,6 +29,7 @@ function goTo(name) { // Takes a screen name value.
 }
 
 function goBack() {
+  document.getElementById("infoIcon").style.visibility = "visible";
   document.getElementById(screenStack[screenStack.length - 1]).scrollTop = 0;
   display(screenStack[screenStack.length - 2])
   screenStack.pop()

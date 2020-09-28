@@ -11,6 +11,9 @@ function update() {
       returnForEachDay(brk)
       updateHeader('Breakfast')
       break;
+    case "creditsScreen":
+      updateCredits()
+        break;
     default:
       updateAllLines()
       break;
@@ -18,7 +21,7 @@ function update() {
 }
 
 function updateCredits() {
-  updateHeader("Credits")
+  updateHeader("Info")
 }
 
 function updateAllLines() {
