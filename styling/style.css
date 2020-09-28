@@ -71,9 +71,7 @@
 @media screen and (orientation:landscape) {
 
   .settingsIcon {
-    margin-right: 1vw;
-    margin-left: auto;
-    fill: #B7B9BF;
+    fill: var(--font-color);
     height: 2.5vw;
     width: 2.5vw;
   }
@@ -92,9 +90,8 @@
   }
 
   .settingsIcon {
-    margin-left: auto;
-    margin-right: 1vw;
-    fill: white;
+    margin-right:1vw;
+    fill: var(--font-color);
     height: 7vw;
     width: 7vw;
   }

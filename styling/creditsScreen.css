@@ -10,9 +10,18 @@
 }
 
 @media screen and (orientation:landscape) {
+  .schedule {
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    margin-top: 2vh;
+  }
 
 }
 
 @media screen and (orientation:portrait) {
-
+  .schedule {
+    width:100vw;
+    margin-top: 2vh;
+  }
 }
