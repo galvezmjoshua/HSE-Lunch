@@ -8,9 +8,14 @@ var day;
 var week;
 var start;
 
+var lineArray;
+
 load();
 
 async function load() {
+  jQuery.get('lines.json', function(data) {
+      lineArray = data;
+  });
   await loadGoogleCharts();
   await s.getRawData();
   initializeSheets();
