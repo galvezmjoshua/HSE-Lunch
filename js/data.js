@@ -140,7 +140,7 @@ function returnFruits(divItem, d, s) {
 
 function returnVegetables(divItem, d, s) {
   if(d > 0 && d < 3) {
-    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Entree"][d].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Vegetable"][d].replace(/\//gi, "<br>");
   } else {
     document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Vegetable"][0].replace(/\//gi, "<br>");
   }
