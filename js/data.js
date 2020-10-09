@@ -8,8 +8,8 @@ function update() {
       break;
     case "breakfastScreen":
       updateSelectedLine(currentLine)
-      returnForEachDay(brk)
-      updateHeader('Breakfast')
+      returnForEachDay("Breakfast")
+      updateHeader("Breakfast")
       break;
     case "creditsScreen":
       updateCredits()
@@ -27,12 +27,12 @@ function updateCredits() {
 function updateAllLines() {
   updateHeader(getWeekName())
 
-  returnEntrees("mondayLineEntrees", week, mon)
-  returnEntrees("tuesdayLineEntrees", week, tue)
-  returnEntrees("wednesdayLineEntrees", week, wed)
-  returnEntrees("thursdayLineEntrees", week, thur)
-  returnEntrees("fridayLineEntrees", week, fri)
-  returnEntrees("breakfastLineEntrees", day - 1, brk)
+  returnEntrees("mondayLineEntrees", week, "Monday")
+  returnEntrees("tuesdayLineEntrees", week, "Tuesday")
+  returnEntrees("wednesdayLineEntrees", week, "Wednesday")
+  returnEntrees("thursdayLineEntrees", week, "Thursday")
+  returnEntrees("fridayLineEntrees", week, "Friday")
+  returnEntrees("breakfastLineEntrees", day - 1, "Breakfast")
   document.getElementById('breakfastButton').innerHTML = 'Breakfast (' + getDayName() + ')';
 }
 
@@ -42,37 +42,32 @@ function updateSelectedLine(line) {
   switch(line){
     case "Monday":
       updateHeader("Monday")
-      returnForEachWeek(mon)
+      returnForEachWeek("Monday")
       break;
     case "Tuesday":
       updateHeader("Tuesday")
-      returnForEachWeek(tue)
+      returnForEachWeek("Tuesday")
       break;
     case "Wednesday":
       updateHeader("Wednesday")
-      returnForEachWeek(wed)
+      returnForEachWeek("Wednesday")
       break;
     case "Thursday":
       updateHeader("Thursday")
-      returnForEachWeek(thur)
+      returnForEachWeek("Thursday")
       break;
     case "Friday":
       updateHeader("Friday")
-      returnForEachWeek(fri)
+      returnForEachWeek("Friday")
       break;
     case "Breakfast":
       updateHeader("Breakfast")
-      returnForEachDay(brk)
+      returnForEachDay("Breakfast")
       break;
     default:
       break;
   }
 }
-
-
-
-
-
 
 function getDayName() {
   if (day == 1) {
@@ -127,26 +122,35 @@ function returnForEachDay(line) {
 
 }
 
-function returnEntrees(divItem, d, s){
-  if((d > 0 && d < 3) || (s === brk && d > 0 && d < 5)) {
-    document.getElementById(divItem).innerHTML = s["entrees"][d].replace(/\//gi, "<br>");
+function returnEntrees(divItem, d, s) {
+  if((d > 0 && d < 3) || (s === "Breakfast" && d > 0 && d < 5)) {
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Entree"][d].replace(/\//gi, "<br>");
   } else {
-    document.getElementById(divItem).innerHTML = s["entrees"][0].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Entree"][0].replace(/\//gi, "<br>");
   }
 }
 
-function returnFruits(divItem, d, s){
+function returnFruits(divItem, d, s) {
   if(d > 0 && d < 3) {
-    document.getElementById(divItem).innerHTML = s["fruits"][d].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Fruit"][d].replace(/\//gi, "<br>");
   } else {
-    document.getElementById(divItem).innerHTML = s["fruits"][0].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Fruit"][0].replace(/\//gi, "<br>");
   }
 }
 
-function returnVegetables(divItem, d, s){
+function returnVegetables(divItem, d, s) {
   if(d > 0 && d < 3) {
-    document.getElementById(divItem).innerHTML = s["vegetables"][d].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Entree"][d].replace(/\//gi, "<br>");
   } else {
-    document.getElementById(divItem).innerHTML = s["vegetables"][0].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Vegetable"][0].replace(/\//gi, "<br>");
   }
+}
+
+function getIndex(l) {
+  for(let j = 0; j < lineArray.lines.length; j++) {
+    if(lineArray.lines[j].Line == l) {
+      return j;
+    }
+  }
+  return -1;
 }
