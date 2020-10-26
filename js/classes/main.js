@@ -1,5 +1,4 @@
 var lunchLines = ["Monday", 'Tuesday', 'Wednesday', 'Thursday', 'Friday', 'Breakfast'];
-var mon, tue, wed, thur, fri, brk;
 var d;
 var day;
 var week;
@@ -10,7 +9,7 @@ var lineArray;
 load();
 
 async function load() {
-  jQuery.get('lines.json', function(data) {
+  await jQuery.get('lines.json', function(data) {
       lineArray = data;
   });
   d = new Date()
@@ -27,13 +26,6 @@ async function load() {
   } else {
     week = 2;
   }
-
-  mon = new LunchLine("monday")
-  tue = new LunchLine("tuesday")
-  wed = new LunchLine("wednesday")
-  thur = new LunchLine("thursday")
-  fri = new LunchLine("friday")
-  brk = new LunchLine("breakfast")
 
   update();
   console.log("loaded")
