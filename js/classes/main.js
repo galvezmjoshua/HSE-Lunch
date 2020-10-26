@@ -23,15 +23,17 @@ async function load() {
       await lineSheets[i].getRawData();
   d = new Date()
   day = d.getDay()
-  start = new Date(d.getFullYear(), 8, 7)
+  start = new Date(d.getFullYear(), 9, 26)
   let difference = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
   var oneDay = 1000 * 60 * 60 * 24;
   let dayNum = Math.floor(difference / oneDay);
-  week = (dayNum / 7) % 2;
-  if (week < ((5 / 7) % 2)) {
+  week = (dayNum / 7) % 3;
+  if (week < 1) {
     week = 0
-  } else {
+  } else if (week < 2) {
     week = 1;
+  } else {
+    week = 2;
   }
 
   mon = new LunchLine("monday")
