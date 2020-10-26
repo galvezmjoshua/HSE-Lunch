@@ -95,6 +95,9 @@ function getWeekName() {
   if (week == 1) {
     return "Week 2"
   }
+  if (week == 2) {
+    return "Week 3"
+  }
   return "Next Week"
 }
 
@@ -107,6 +110,9 @@ function returnForEachWeek(line) {
   returnFruits("week2FruitItems", 1, line)
   returnVegetables("week2VegItems", 1, line)
 
+  returnEntrees("week3EntreeItems", 2, line)
+  returnFruits("week3FruitItems", 2, line)
+  returnVegetables("week3VegItems", 2, line)
 }
 
 function returnForEachDay(line) {
@@ -140,7 +146,7 @@ function returnFruits(divItem, d, s) {
 
 function returnVegetables(divItem, d, s) {
   if(d > 0 && d < 3) {
-    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Entree"][d].replace(/\//gi, "<br>");
+    document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Vegetable"][d].replace(/\//gi, "<br>");
   } else {
     document.getElementById(divItem).innerHTML = lineArray.lines[getIndex(s)]["Vegetable"][0].replace(/\//gi, "<br>");
   }
