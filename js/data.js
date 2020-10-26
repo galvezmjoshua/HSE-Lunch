@@ -95,6 +95,9 @@ function getWeekName() {
   if (week == 1) {
     return "Week 2"
   }
+  if (week == 2) {
+    return "Week 3"
+  }
   return "Next Week"
 }
 
@@ -107,6 +110,9 @@ function returnForEachWeek(line) {
   returnFruits("week2FruitItems", 1, line)
   returnVegetables("week2VegItems", 1, line)
 
+  returnEntrees("week3EntreeItems", 2, line)
+  returnFruits("week3FruitItems", 2, line)
+  returnVegetables("week3VegItems", 2, line)
 }
 
 function returnForEachDay(line) {
