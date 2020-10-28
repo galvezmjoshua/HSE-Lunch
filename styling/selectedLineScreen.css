@@ -25,11 +25,11 @@
     padding-top: 0.5vw;
     padding-left: 5vw;
     font-size: 2vh;
-    background-color: #004794ad;
+    background-color: #2a8ff7;
     color: white;
   }
   .stickyButton:hover {
-    background-color: #4777D190;
+    background-color: #2182e6;
   }
   .noDIV {
     display: none;
@@ -72,7 +72,7 @@
     padding-top: 1vw;
     padding-left: 5vw;
     font-size: 5vw;
-    background-color: #004794ad;
+    background-color: #2a8ff7;
     color: white;
     position: sticky;
     position: -webkit-sticky;

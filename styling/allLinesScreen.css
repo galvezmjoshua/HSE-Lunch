@@ -6,7 +6,7 @@
     padding-left:1vw;
     border-radius: 1vw;
     background: white;
-    margin-bottom: 2vh;
+    margin-bottom: 3vh;
     box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
   }
   .lineButton:hover {
@@ -50,8 +50,7 @@
     margin-bottom: 3vh;
     box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
     width: 90%;
-    border-radius: 1vw;
-    margin
+    border-radius: 10px;
   }
   .lineButtonText {
     font-size: 100%;
@@ -61,7 +60,7 @@
     display: flex;
     margin-top: auto;
     margin-bottom: auto;
-    padding-left:1vw;
+    padding-left:2vw;
   }
   .lineButtonImage {
     margin-top: auto;
