@@ -1,33 +1,41 @@
 @media screen and (orientation:landscape) {
   .lineButton {
-    font-size: 5vw;
+    font-size: 3vw;
     display: flex;
     flex-direction: row;
-    padding-left: 1vw;
+    padding-left:1vw;
+    border-radius: 1vw;
+    background: white;
+    margin-bottom: 2vh;
+    box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
   }
   .lineButton:hover {
-    background-color: var(--hover-color);
+    background-color: #f9f9f9;
   }
   .lineButtonText {
     font-size: 100%;
     color: var(--select-color);
     text-align: left;
-    font-weight: bold;
+    font-weight: 500;
     display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
   }
   .lineButtonImage {
     margin-top: auto;
     margin-bottom: auto;
     margin-left: auto;
-    height: 4.5vw;
-    width: 9vw;
+    height: 2.5vw;
   }
   .lineItems {
-    font-size: 4vw;
+    font-size: 2vw;
     color: var(--font-color);
-    text-align: left;
-    width: 96vw;
-    margin-left: 4vw;
+    text-align: right;
+    width: 50%;
+    padding: 2vh;
+    margin-left:auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 }
 
@@ -36,7 +44,14 @@
     font-size: 7vw;
     display: flex;
     flex-direction: row;
-    margin-left: 2vw;
+    background: white;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 3vh;
+    box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
+    width: 90%;
+    border-radius: 1vw;
+    margin
   }
   .lineButtonText {
     font-size: 100%;
@@ -44,6 +59,9 @@
     text-align: left;
     font-weight: bold;
     display: flex;
+    margin-top: auto;
+    margin-bottom: auto;
+    padding-left:1vw;
   }
   .lineButtonImage {
     margin-top: auto;
@@ -55,9 +73,12 @@
   .lineItems {
     font-size: 6vw;
     color: var(--font-color);
-    text-align: left;
+    text-align: right;
     width: 80vw;
-    margin-left: 5vw;
+    padding: 2vh;
+    margin-left:auto;
+    margin-top: auto;
+    margin-bottom: auto;
   }
 
 }

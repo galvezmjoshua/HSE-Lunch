@@ -11,12 +11,12 @@
 }
  [data-theme="light"] {
      --nav-color: #004794;
-     --select-color: #1158A5;
-     --font-color: black;
-     --bg-color: #FFFFFF;
-     --header-color: #e8ebe9;
+     --select-color: #333333;
+     --font-color: #555555;
+     --bg-color: #fafcff;
+     --header-color: #FFF;
      --highlight-color: #87CEFA;
-     --header-text-color: #6698FF;
+     --header-text-color: black;
      --bs-background-color: #ededed;
      --hover-color: #E6E6FF;
 }
@@ -37,62 +37,70 @@
 }
 
 .container {
-  font-family: 'Rubik', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji';
   overflow-y:scroll;
   width: 100%;
   position: absolute;
   height: 100vh;
   padding-bottom:2vh;
+  background-color: var(--bg-color);
 }
 
 .header {
   align-items: center;
   background-color: var(--header-color);
-  box-shadow: 0px 0px 5px #414141;
   display: flex;
   flex-direction: row;
-  font-family: 'Rubik', sans-serif;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
+  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
+  'Noto Color Emoji';
   height: 8vh;
   justify-content: center;
   position: absolute;
   text-align: center;
   width: 100%;
   z-index: 1;
+  border-bottom: solid 1px #e5e5e5;
 }
 
 .headerText {
-  margin-left: auto;
+  margin-left: 5vw;
   margin-right: auto;
-  font-size: 5.5vh;
-  font-weight: normal;
-  color: var(--font-color);
+  font-size: 4vh;
+  font-weight: 600;
+  color: var(--header-text-color);
 }
 
 @media screen and (orientation:landscape) {
+  .container {
+    width: 50%;
+    padding-left: 25%;
+    padding-right: 25%;
+  }
 
   .settingsIcon {
-    fill: var(--font-color);
-    height: 2.5vw;
-    width: 2.5vw;
-  }
-  .settingsIcon:hover {
-    fill: #98999D;
+    fill: white;
+    height: 1vw;
+    width: 1vw;
+    background: #2a8ff7;
+    border-radius: 100%;
+    padding: 0.5vw;
+    margin-right:1vw;
   }
 }
 
 @media screen and (orientation:portrait) {
-  .content {
-    background-color: var(--header-color);
-  }
-
-  .container {
-    background-color: var(--bg-color);
-  }
 
   .settingsIcon {
-    margin-right:1vw;
-    fill: var(--font-color);
-    height: 7vw;
-    width: 7vw;
+    fill: white;
+    height: 5vw;
+    width: 5vw;
+    background: #2a8ff7;
+    border-radius: 100%;
+    border: 0px;
+    padding: 1vw;
+    margin-right: 2vw;
   }
 }

@@ -39,34 +39,8 @@ function updateAllLines() {
 function updateSelectedLine(line) {
   currentLine = line;
 
-  switch(line){
-    case "Monday":
-      updateHeader("Monday")
-      returnForEachWeek("Monday")
-      break;
-    case "Tuesday":
-      updateHeader("Tuesday")
-      returnForEachWeek("Tuesday")
-      break;
-    case "Wednesday":
-      updateHeader("Wednesday")
-      returnForEachWeek("Wednesday")
-      break;
-    case "Thursday":
-      updateHeader("Thursday")
-      returnForEachWeek("Thursday")
-      break;
-    case "Friday":
-      updateHeader("Friday")
-      returnForEachWeek("Friday")
-      break;
-    case "Breakfast":
-      updateHeader("Breakfast")
-      returnForEachDay("Breakfast")
-      break;
-    default:
-      break;
-  }
+  updateHeader(line)
+  returnForEachWeek(line)
 }
 
 function getDayName() {

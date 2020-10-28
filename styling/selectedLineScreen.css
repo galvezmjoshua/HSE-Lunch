@@ -1,35 +1,32 @@
 @media screen and (orientation:landscape) {
   .dayText {
-    font-size: 5vw;
+    font-size: 3vw;
     color: var(--select-color);
     text-align: left;
-    font-weight: bold;
+    font-weight: 500;
     display: flex;
     padding-left: 1vw;
   }
   .itemType {
-    font-size: 4vw;
-    font-weight: bold;
+    font-size: 2vw;
+    font-weight: 500;
     color: var(--header-text-color);
     text-align: left;
     margin-left: 4vw;
   }
   .items {
-    font-size: 3.5vw;
+    font-size: 1.5vw;
     color: var(--font-color);
     text-align: left;
     margin-left: 6vw;
   }
   .stickyButton {
-    padding-bottom: 1vw;
-    padding-top: 1vw;
+    padding-bottom: 0.5vw;
+    padding-top: 0.5vw;
     padding-left: 5vw;
-    font-size: 3vh;
+    font-size: 2vh;
     background-color: #004794ad;
     color: white;
-    position:sticky;
-    position: -webkit-sticky;
-    top: 8vh;
   }
   .stickyButton:hover {
     background-color: #4777D190;
@@ -40,7 +37,7 @@
   .column {
     display:flex;
     flex-direction: row;
-    width:100vw;
+    width: 70%;
   }
 }
 
