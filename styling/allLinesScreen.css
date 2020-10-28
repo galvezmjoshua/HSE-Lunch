@@ -8,9 +8,12 @@
     background: white;
     margin-bottom: 3vh;
     box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
+    transition: transform 0.3s ease;
+    transform: translateX(0px);
   }
   .lineButton:hover {
     background-color: #f9f9f9;
+    transform: translateX(10px);
   }
   .lineButtonText {
     font-size: 100%;
