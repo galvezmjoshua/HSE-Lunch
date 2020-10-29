@@ -7,7 +7,7 @@ function update() {
       updateSelectedLine(currentLine)
       break;
     case "breakfastScreen":
-      updateSelectedLine(currentLine)
+      currentLine = "Breakfast";
       returnForEachDay("Breakfast")
       updateHeader("Breakfast")
       break;

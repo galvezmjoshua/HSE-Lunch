@@ -1,19 +1,17 @@
 @media screen and (orientation:landscape) {
   .lineButton {
     font-size: 3vw;
-    display: flex;
-    flex-direction: row;
-    padding-left:1vw;
-    border-radius: 1vw;
+    padding:1vw;
+    border-radius: 10px;
     background: white;
-    margin-bottom: 3vh;
     box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
     transition: transform 0.3s ease;
-    transform: translateX(0px);
+    transform: translateY(0px);
+    margin-bottom: 3vh;
   }
   .lineButton:hover {
     background-color: #f9f9f9;
-    transform: translateX(10px);
+    transform: translateY(-10px);
   }
   .lineButtonText {
     font-size: 100%;
@@ -24,29 +22,17 @@
     margin-top: auto;
     margin-bottom: auto;
   }
-  .lineButtonImage {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    height: 2.5vw;
-  }
   .lineItems {
     font-size: 2vw;
     color: var(--font-color);
-    text-align: right;
-    width: 50%;
-    padding: 2vh;
-    margin-left:auto;
-    margin-top: auto;
-    margin-bottom: auto;
+    text-align: left;
+    font-weight:300;
   }
 }
 
 @media screen and (orientation:portrait) {
   .lineButton {
     font-size: 7vw;
-    display: flex;
-    flex-direction: row;
     background: white;
     margin-left: auto;
     margin-right: auto;
@@ -54,6 +40,7 @@
     box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
     width: 90%;
     border-radius: 10px;
+    padding: 2vw;
   }
   .lineButtonText {
     font-size: 100%;
@@ -61,26 +48,12 @@
     text-align: left;
     font-weight: bold;
     display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
-    padding-left:2vw;
-  }
-  .lineButtonImage {
-    margin-top: auto;
-    margin-bottom: auto;
-    margin-left: auto;
-    height: 5.5vw;
-    width: 9vw;
   }
   .lineItems {
     font-size: 6vw;
     color: var(--font-color);
-    text-align: right;
+    text-align: left;
     width: 80vw;
-    padding: 2vh;
-    margin-left:auto;
-    margin-top: auto;
-    margin-bottom: auto;
   }
 
 }

@@ -1,81 +1,91 @@
 @media screen and (orientation:landscape) {
+  .contentContainer {
+    background: white;
+    box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
+    padding:1vw;
+    border-radius: 10px;
+    transition: transform .2s ease;
+  }
+  .contentContainer:hover {
+    transform: translateY(10px) scale(1.01);
+  }
   .dayText {
     font-size: 3vw;
     color: var(--select-color);
     text-align: left;
     font-weight: 500;
     display: flex;
-    padding-left: 1vw;
+    border-bottom: 1px solid #e5e5e5;
   }
   .itemType {
     font-size: 2vw;
     font-weight: 500;
     color: var(--header-text-color);
     text-align: left;
-    margin-left: 4vw;
+    margin-left: 1vw;
   }
   .items {
     font-size: 1.5vw;
     color: var(--font-color);
     text-align: left;
-    margin-left: 6vw;
+    margin-left: 1vw;
   }
   .stickyButton {
-    padding-bottom: 0.5vw;
-    padding-top: 0.5vw;
-    padding-left: 5vw;
+    padding: 0.25vw 0.75vw 0.25vw 0.75vw;
     font-size: 2vh;
-    background-color: #2a8ff7;
-    color: white;
+    background: #2a8ff7;
+    color:white;
+    border-radius: 20px;
+    width: fit-content;
   }
   .stickyButton:hover {
-    background-color: #2182e6;
-  }
-  .noDIV {
-    display: none;
-  }
-  .column {
-    display:flex;
-    flex-direction: row;
-    width: 70%;
+    background: #40a9ff;
+    transition: 0.3s ease;
   }
 }
 
 @media screen and (orientation:portrait) {
+  .contentContainer {
+    box-shadow: rgba(0, 118, 220, 0.18) 2px 2px 15px;
+    padding:1vw;
+    border-radius: 10px;
+    width: 95vw;
+    margin-left: auto;
+    margin-right: auto;
+  }
   .dayText {
     font-size: 7vw;
     color: var(--select-color);
     text-align: left;
     font-weight: bold;
     display: flex;
-    margin-left: 2vw;
+    border-bottom: 1px solid #e5e5e5;
+    margin-right:1vw;
+    margin-left:1vw;
   }
 
   .itemType {
     font-size: 6vw;
-    font-weight: bold;
+    font-weight: 500;
     color: var(--header-text-color);
     text-align: left;
     width: 80vw;
-    margin-left: 4vw;
+    margin-left: 1vw;
   }
   .items {
     font-size: 5.5vw;
     color: var(--font-color);
     text-align: left;
     width: 80vw;
-    margin-left: 6vw;
+    margin-left: 1vw;
   }
   .stickyButton {
-    width: 25vw;
-    padding-bottom: 1vw;
-    padding-top: 1vw;
-    padding-left: 5vw;
+    padding: 0.5vw 2.5vw 0.5vw 2.5vw;
     font-size: 5vw;
-    background-color: #2a8ff7;
-    color: white;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 8vh;
+    background: #2a8ff7;
+    color:white;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: 1vw;
   }
 }

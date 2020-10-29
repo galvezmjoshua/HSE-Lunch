@@ -8,7 +8,20 @@ const PORT = process.env.PORT || 51000;
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert')
 
-
+function getWeek(s) {
+  let d = new Date()
+  let day = d.getDay()
+  let start = s;
+  let difference = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
+  let oneDay = 1000 * 60 * 60 * 24;
+  let dayNum = Math.floor(difference / oneDay);
+  let week = (dayNum / 7) % 2;
+  if (week < ((5 / 7) % 2)) {
+    return 0;
+  } else {
+    return 1;
+  }
+}
 
 
 // Config
@@ -17,12 +30,26 @@ app.set('view engine', 'ejs')
 
 //Routing
 app.get('/', (req, res) => {
-  let theme = req.query.theme;
-  if (!(theme)) {
-    theme = 'light'
-  }
-  res.render('index', {colorTheme: theme})
-})
+  var result = [];
+  const client = new MongoClient(uri, { useUnifiedTopology: true, useNewUrlParser: true });
+  client.connect(err => {
+    assert.equal(null, err);
+    console.log("Connected correctly to server");
+    const col = client.db("LunchSchedule").collection("LunchSched");
+    const cursor = col.find();
+    cursor.forEach(function(doc, err) {
+      assert.equal(null, err);
+      if(doc.Type == "WEEKLY") {
+        doc['Week'] = getWeek(doc.Start);
+      }
+      result.push(doc);
+      console.log(doc);
+    }, function() {
+      client.close();
+      res.render('index', {lines: result, colorTheme: 'light'})
+    })
+  });
+});
 
 app.get('/:json', (req, res) => {
   var result = [];
@@ -35,7 +62,11 @@ app.get('/:json', (req, res) => {
       const cursor = col.find();
       cursor.forEach(function(doc, err) {
         assert.equal(null, err);
+        if(doc.Type == "WEEKLY") {
+          doc['Week'] = getWeek(doc.Start)
+        }
         result.push(doc)
+        console.log(doc)
       }, function() {
         client.close();
         res.json({lines: result})
@@ -44,7 +75,7 @@ app.get('/:json', (req, res) => {
   } else {
     res.send('No file').status(404)
   }
-})
+});
 
 
 app.use("/", express.static(__dirname + "/"));

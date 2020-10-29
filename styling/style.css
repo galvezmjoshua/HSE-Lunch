@@ -34,18 +34,18 @@
   user-select: none; /* Non-prefixed version, currently supported by Chrome and Opera */
   margin: 0;
   padding: 0;
-}
-
-.container {
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
   'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
   'Noto Color Emoji';
+}
+
+.container {
   overflow-y:scroll;
   width: 100%;
   position: absolute;
   height: 100vh;
   padding-bottom:2vh;
-  background-color: var(--bg-color);
+  background: var(--bg-color);
 }
 
 .header {
@@ -53,9 +53,6 @@
   background-color: var(--header-color);
   display: flex;
   flex-direction: row;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial,
-  'Noto Sans', sans-serif, 'Apple Color Emoji', 'Segoe UI Emoji', 'Segoe UI Symbol',
-  'Noto Color Emoji';
   height: 8vh;
   justify-content: center;
   position: absolute;
@@ -73,11 +70,25 @@
   color: var(--header-text-color);
 }
 
+.box-placeholder {
+  font-size: 0;
+  line-height:4vh;
+  display: inline-block;
+  background-color: #444;
+  height: 15px;
+  width: 20vw;
+  opacity: .1;
+  animation: fading 1.5s infinite;
+  }
+
 @media screen and (orientation:landscape) {
   .container {
     width: 50%;
     padding-left: 25%;
     padding-right: 25%;
+  }
+  .container::-webkit-scrollbar {
+    display: none;
   }
 
   .settingsIcon {
@@ -108,5 +119,19 @@
     border: 0px;
     padding: 1vw;
     margin-right: 2vw;
+  }
+}
+
+@keyframes fading {
+  0% {
+    opacity: .1;
+  }
+
+  50% {
+    opacity: .2;
+  }
+
+  100% {
+    opacity: .1;
   }
 }

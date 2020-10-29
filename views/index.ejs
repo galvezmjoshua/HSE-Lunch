@@ -52,7 +52,7 @@
     </script>
     <div>
       <div class="header">
-        <h1 class="headerText" id="header">Loading</h1>
+        <h1 class="headerText" id="header">HSE Lunch</h1>
         <svg version="1.1" id="infoIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
         	 width="42.5px" height="42.5px" viewBox="0 0 42.5 42.5" style="enable-background:new 0 0 42.5 42.5;" xml:space="preserve" class="settingsIcon" onclick="goTo('Credits')">
         <g>
@@ -65,42 +65,16 @@
 
       <div class="container" id="allLinesScreen">
         <div style="width:100%; height:9.5vh"></div>
-        <div class="lineButton" onclick="goTo('Monday')">
-          <div class="lineButtonText" id="mondayButton">Monday</div>
-          <div class="lineItems" id="mondayLineEntrees">Loading...</div>
-        </div>
-
-
-        <div class="lineButton" onclick="goTo('Tuesday')">
-          <div class="lineButtonText" id="tuesdayButton">Tuesday</div>
-          <div class="lineItems" id="tuesdayLineEntrees">Loading...</div>
-        </div>
-
-        <div class="lineButton" onclick="goTo('Wednesday')">
-          <div class="lineButtonText" id="wednesdayButton">Wednesday</div>
-          <div class="lineItems" id="wednesdayLineEntrees">Loading...</div>
-        </div>
-
-        <div class="lineButton" onclick="goTo('Thursday')">
-          <div class="lineButtonText" id="thursdayButton">Thursday</div>
-          <div class="lineItems" id="thursdayLineEntrees">Loading...</div>
-        </div>
-
-        <div class="lineButton" onclick="goTo('Friday')">
-          <div class="lineButtonText" id="fridayButton">Friday</div>
-          <div class="lineItems" id="fridayLineEntrees">Loading...</div>
-        </div>
-
-        <div class="lineButton" onclick="goTo('Breakfast')">
-          <div class="lineButtonText" id="breakfastButton">Breakfast</div>
-          <div class="lineItems" id="breakfastLineEntrees">Loading...</div>
-        </div>
+        <% for(var i=0; i < lines.length; i++) { %>
+          <%- include('./partials/lineButton', {line: lines[i]}); %>
+        <% } %>
 
         <div style="width:100%; height:12.5vh"></div>
       </div>
       <div class="container" id="selectedLineScreen" style="display: none;">
         <div style="width:100%; height:9.5vh"></div>
-        <div class="stickyButton" onclick="goBack()">Go Back</div>
+          <div class="contentContainer">
+            <div class="stickyButton" onclick="goBack()">Go Back</div>
             <div class="dayText" id="week1Row">Week 1</div>
             <div class="itemType" id="week1EntreeText">Entrees</div>
             <div class="items" id="week1EntreeItems">Loading...</div>
@@ -108,7 +82,6 @@
             <div class="items" id="week1VegItems">Loading...</div>
             <div class="itemType" id="week1FruitText">Fruits</div>
             <div class="items" id="week1FruitItems">Loading...</div>
-          <div class="noDIV" style="width:100%; height:3vh"></div>
             <div class="dayText" id="week2Row">Week 2</div>
             <div class="itemType" id="week2EntreeText">Entrees</div>
             <div class="items" id="week2EntreeItems">Loading...</div>
@@ -116,7 +89,6 @@
             <div class="items" id="week2VegItems">Loading...</div>
             <div class="itemType" id="week2FruitText">Fruits</div>
             <div class="items" id="week2FruitItems">Loading...</div>
-          <div class="noDIV" style="width:100%; height:3vh"></div>
             <div class="dayText" id="week3Row">Week 3</div>
             <div class="itemType" id="week3EntreeText">Entrees</div>
             <div class="items" id="week3EntreeItems">Loading...</div>
@@ -124,31 +96,34 @@
             <div class="items" id="week3VegItems">Loading...</div>
             <div class="itemType" id="week3FruitText">Fruits</div>
             <div class="items" id="week3FruitItems">Loading...</div>
+          </div>
 
         <div style="width:100%; height:12.5vh"></div>
       </div>
       <div class="container" id="breakfastScreen" style="display: none;">
         <div style="width:100%; height:9.5vh"></div>
-        <div class="stickyButton" onclick="goBack()">Go Back</div>
 
-        <div class="dayText" id="mondayRow">Monday</div>
-        <div class="items" id="mondayEntreeItems">Loading...</div>
+        <div class="contentContainer">
+          <div class="stickyButton" onclick="goBack()">Go Back</div>
+          <div class="dayText" id="mondayRow">Monday</div>
+          <div class="items" id="mondayEntreeItems">Loading...</div>
 
-        <div class="dayText" id="tuesdayRow">Tuesday</div>
-        <div class="items" id="tuesdayEntreeItems">Loading...</div>
+          <div class="dayText" id="tuesdayRow">Tuesday</div>
+          <div class="items" id="tuesdayEntreeItems">Loading...</div>
 
-        <div class="dayText" id="wednesdayRow">Wednesday</div>
-        <div class="items" id="wednesdayEntreeItems">Loading...</div>
+          <div class="dayText" id="wednesdayRow">Wednesday</div>
+          <div class="items" id="wednesdayEntreeItems">Loading...</div>
 
-        <div class="dayText" id="thursdayRow">Thursday</div>
-        <div class="items" id="thursdayEntreeItems">Loading...</div>
+          <div class="dayText" id="thursdayRow">Thursday</div>
+          <div class="items" id="thursdayEntreeItems">Loading...</div>
 
-        <div class="dayText" id="fridayRow">Friday</div>
-        <div class="items" id="fridayEntreeItems">Loading...</div>
+          <div class="dayText" id="fridayRow">Friday</div>
+          <div class="items" id="fridayEntreeItems">Loading...</div>
+        </div>
 
         <div style="width:100%; height:12.5vh"></div>
       </div>
-      <div class="container center" id="creditsScreen" style="display: none;">
+      <div class="container center" id="creditsScreen" style="display: none; background: #00000090; z-index: 1000">
         <div style="width:100%; height:9.5vh"></div>
         <div class="stickyButton" onclick="goBack()">Go Back</div>
         <a href="images/schedule.png">
