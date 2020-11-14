@@ -5,14 +5,16 @@
     padding:1vw;
     border-radius: 10px;
     transition: transform .2s ease;
+    -webkit-transition: transform .2s ease;
+    margin-bottom: 4vh;
   }
   .contentContainer:hover {
     transform: translateY(10px) scale(1.01);
+    -webkit-transform: translateY(10px) scale(1.01);
   }
   .dayText {
     font-size: 3vw;
     color: var(--select-color);
-    text-align: left;
     font-weight: 500;
     display: flex;
     border-bottom: 1px solid #e5e5e5;
@@ -30,18 +32,6 @@
     text-align: left;
     margin-left: 1vw;
   }
-  .stickyButton {
-    padding: 0.25vw 0.75vw 0.25vw 0.75vw;
-    font-size: 2vh;
-    background: #2a8ff7;
-    color:white;
-    border-radius: 20px;
-    width: fit-content;
-  }
-  .stickyButton:hover {
-    background: #40a9ff;
-    transition: 0.3s ease;
-  }
 }
 
 @media screen and (orientation:portrait) {
@@ -52,6 +42,7 @@
     width: 95vw;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 2vh;
   }
   .dayText {
     font-size: 7vw;
@@ -75,17 +66,7 @@
   .items {
     font-size: 5.5vw;
     color: var(--font-color);
-    text-align: left;
     width: 80vw;
-    margin-left: 1vw;
-  }
-  .stickyButton {
-    padding: 0.5vw 2.5vw 0.5vw 2.5vw;
-    font-size: 5vw;
-    background: #2a8ff7;
-    color:white;
-    border-radius: 20px;
-    width: fit-content;
     margin-left: 1vw;
   }
 }

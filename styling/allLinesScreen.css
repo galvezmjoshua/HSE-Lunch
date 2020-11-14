@@ -14,18 +14,12 @@
     transform: translateY(-10px);
   }
   .lineButtonText {
-    font-size: 100%;
     color: var(--select-color);
-    text-align: left;
     font-weight: 500;
-    display: flex;
-    margin-top: auto;
-    margin-bottom: auto;
   }
   .lineItems {
     font-size: 2vw;
     color: var(--font-color);
-    text-align: left;
     font-weight:300;
   }
 }
@@ -43,16 +37,12 @@
     padding: 2vw;
   }
   .lineButtonText {
-    font-size: 100%;
     color: var(--select-color);
-    text-align: left;
     font-weight: bold;
-    display: flex;
   }
   .lineItems {
     font-size: 6vw;
     color: var(--font-color);
-    text-align: left;
     width: 80vw;
   }
 

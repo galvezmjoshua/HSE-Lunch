@@ -81,6 +81,13 @@
   animation: fading 1.5s infinite;
   }
 
+.settingsIcon {
+  fill: white;
+  background: #2a8ff7;
+  border-radius: 100%;
+  box-shadow: 0 2px 0 rgba(0,0,0,.045);
+}
+
 @media screen and (orientation:landscape) {
   .container {
     width: 50%;
@@ -92,33 +99,51 @@
   }
 
   .settingsIcon {
-    fill: white;
     height: 1vw;
     width: 1vw;
-    background: #2a8ff7;
-    border-radius: 100%;
     padding: 0.5vw;
     margin-right:1vw;
-    box-shadow: 0 2px 0 rgba(0,0,0,.045);
   }
 
   .settingsIcon:hover {
     background: #40a9ff;
     transition: 0.3s ease;
   }
+
+  .button {
+    padding: 0.25vw 0.75vw 0.25vw 0.75vw;
+    font-size: 2vh;
+    background: #2a8ff7;
+    color:white;
+    border-radius: 20px;
+    width: fit-content;
+    box-shadow: 0 2px 0 rgba(0,0,0,.045);
+  }
+  .button:hover {
+    background: #40a9ff;
+    transition: 0.3s ease;
+  }
 }
 
-@media screen and (orientation:portrait) {
 
+
+@media screen and (orientation:portrait) {
   .settingsIcon {
-    fill: white;
     height: 5vw;
     width: 5vw;
-    background: #2a8ff7;
-    border-radius: 100%;
-    border: 0px;
     padding: 1vw;
     margin-right: 2vw;
+  }
+
+  .button {
+    padding: 0.5vw 2.5vw 0.5vw 2.5vw;
+    font-size: 5vw;
+    background: #2a8ff7;
+    color:white;
+    border-radius: 20px;
+    width: fit-content;
+    margin-left: 1vw;
+    box-shadow: 0 2px 0 rgba(0,0,0,.045);
   }
 }
 

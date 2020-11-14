@@ -1,48 +1,41 @@
-var screenStack = ["allLinesScreen"]
-var screens = ["allLinesScreen", "selectedLineScreen", "breakfastScreen", "creditsScreen"];
-var screenNames = ["Home", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Breakfast", "Credits"];
+var screenStack = ["homeScreen"]
+var screens = ["homeScreen", "menuScreen", "creditsScreen"];
 var currentLine;
 
-function goTo(name) { // Takes a screen name value.
-  let i = screenNames.indexOf(name);
-
-  if (i == 0) { // For allLinesScreen.
-    screenStack.push("allLinesScreen") // Adds allLinesScreen to the top of stack.
-    display(screenStack[screenStack.length - 1]) // Displays allLinesScreen.
-
-  } else if (i > 0 && i < 6) { // For selectedLineScreen.
-    screenStack.push("selectedLineScreen") // Adds selectedLineScreen to the top of stack.
-    display(screenStack[screenStack.length - 1]) // Displays selectedLineScreen.
-    currentLine = name; // Updates currentLine.
-
-  } else if (i == 6) { // For breakfastScreen.
-    screenStack.push("breakfastScreen") // Adds breakfastScreen to the top of stack.
-    display(screenStack[screenStack.length - 1]) // Displays breakfastScreen.
-  } else if (i == 7) { // For creditsScreen.
-    screenStack.push("creditsScreen") // Adds creditsScreen to the top of stack.
-    display(screenStack[screenStack.length - 1]) // Displays creditsScreen.
-    document.getElementById("infoIcon").style.visibility = "hidden";
-  } else {
-
+function goTo(name) { // Takes a screen 'name' value.
+  console.log(getIndex(name))
+  if(name == "Home") {
+    screenStack.push("HomeScreen")
+    display(screenStack[screenStack.length - 1])
+    console.log("Home")
+  } else if(getIndex(name) != -1) {
+    screenStack.push("menuScreen")
+    display(screenStack[screenStack.length - 1])
+    currentLine = name;
+    console.log(name)
+  } else if(name == "Credits") {
+    screenStack.push("creditsScreen")
+    display(screenStack[screenStack.length - 1])
+    console.log("Credits")
   }
-  update()
+  update() // Updates the screen the app is going to
 }
 
-function goBack() {
-  document.getElementById("infoIcon").style.visibility = "visible";
-  document.getElementById(screenStack[screenStack.length - 1]).scrollTop = 0;
+function goBack() { // Goes back a screen
+  document.getElementById(screenStack[screenStack.length - 1]).scrollTop = 0; // Resets position on the scren
   display(screenStack[screenStack.length - 2])
   screenStack.pop()
-  update()
+  update() // Updates the screen the app is going back to
 }
 
-function display(screen) {
+function display(s) { // Hides all screens, then shows screen 's'
   screens.forEach((scr) => {
     document.getElementById(scr).style.display = "none";
   });
-  document.getElementById(screen).style.display = "block";
+  document.getElementById(s).style.display = "block";
+
 }
 
-function updateHeader(name) {
+function updateHeader(name) { // Currently unused
   document.getElementById("header").innerHTML = name;
 }

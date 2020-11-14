@@ -8,19 +8,14 @@ const PORT = process.env.PORT || 51000;
 const MongoClient = require('mongodb').MongoClient;
 const assert = require('assert')
 
-function getWeek(s) {
+function getWeek(s, l) {
   let d = new Date()
   let day = d.getDay()
-  let start = s;
-  let difference = (d - start) + ((start.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
+  let difference = (d - s) + ((s.getTimezoneOffset() - d.getTimezoneOffset()) * 60 * 1000);
   let oneDay = 1000 * 60 * 60 * 24;
   let dayNum = Math.floor(difference / oneDay);
-  let week = (dayNum / 7) % 2;
-  if (week < ((5 / 7) % 2)) {
-    return 0;
-  } else {
-    return 1;
-  }
+  let week = (dayNum / 7) % l;
+  return Math.floor(week);
 }
 
 
@@ -35,15 +30,14 @@ app.get('/', (req, res) => {
   client.connect(err => {
     assert.equal(null, err);
     console.log("Connected correctly to server");
-    const col = client.db("LunchSchedule").collection("LunchSched");
+    const col = client.db("LunchSchedule").collection("LunchSchedTest");
     const cursor = col.find();
     cursor.forEach(function(doc, err) {
       assert.equal(null, err);
       if(doc.Type == "WEEKLY") {
-        doc['Week'] = getWeek(doc.Start);
+        doc['Week'] = getWeek(doc.Start, doc.Items[1].length)
       }
       result.push(doc);
-      console.log(doc);
     }, function() {
       client.close();
       res.render('index', {lines: result, colorTheme: 'light'})
@@ -58,15 +52,14 @@ app.get('/:json', (req, res) => {
     client.connect(err => {
       assert.equal(null, err);
       console.log("Connected correctly to server");
-      const col = client.db("LunchSchedule").collection("LunchSched");
+      const col = client.db("LunchSchedule").collection("LunchSchedTest");
       const cursor = col.find();
       cursor.forEach(function(doc, err) {
         assert.equal(null, err);
         if(doc.Type == "WEEKLY") {
-          doc['Week'] = getWeek(doc.Start)
+          doc['Week'] = getWeek(doc.Start, doc.Items[1].length)
         }
         result.push(doc)
-        console.log(doc)
       }, function() {
         client.close();
         res.json({lines: result})
