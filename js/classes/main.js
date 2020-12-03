@@ -1,5 +1,5 @@
 var date;
-var today;
+var today;  // Ex: 'Monday', 'Tuesday', etc.
 
 var lineArray;
 
@@ -12,5 +12,5 @@ async function load() { // When the app is first loaded
   d = new Date()
   today = d.getDay() - 1;
 
-  update();
+  update(); // Updates the screen the app is at
 }

@@ -21,33 +21,14 @@ function getWeek(s, l) {
 
 // Config
 
-app.set('view engine', 'ejs')
-
 //Routing
 app.get('/', (req, res) => {
-  var result = [];
-  const client = new MongoClient(uri, { useUnifiedTopology: true, useNewUrlParser: true });
-  client.connect(err => {
-    assert.equal(null, err);
-    console.log("Connected correctly to server");
-    const col = client.db("LunchSchedule").collection("LunchSchedTest");
-    const cursor = col.find();
-    cursor.forEach(function(doc, err) {
-      assert.equal(null, err);
-      if(doc.Type == "WEEKLY") {
-        doc['Week'] = getWeek(doc.Start, doc.Items[1].length)
-      }
-      result.push(doc);
-    }, function() {
-      client.close();
-      res.render('index', {lines: result, colorTheme: 'light'})
-    })
-  });
+  res.sendFile(__dirname + "/public/index.html")
 });
 
-app.get('/:json', (req, res) => {
+app.get('/:data', (req, res) => {
   var result = [];
-  if (req.params.json == 'lines.json') {
+  if (req.params.data == 'lines.json') {
     const client = new MongoClient(uri, { useUnifiedTopology: true, useNewUrlParser: true });
     client.connect(err => {
       assert.equal(null, err);

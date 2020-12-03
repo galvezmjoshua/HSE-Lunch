@@ -2,21 +2,19 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no, viewport-fit=cover">
     <link rel="icon" href="%PUBLIC_URL%/favicon.ico" />
     <link rel="stylesheet" type="text/css" href="/styling/style.css">
     <link rel="stylesheet" type="text/css" href="/styling/allLinesScreen.css">
     <link rel="stylesheet" type="text/css" href="/styling/selectedLineScreen.css">
     <link rel="stylesheet" type="text/css" href="/styling/creditsScreen.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Rubik&display=swap">
+    <script src="js/classes/Line.js" type="text/javascript"></script>
     <script src="js/data.js"></script>
     <script src="js/navigation.js"></script>
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
     <script src="https://www.gstatic.com/charts/loader.js"></script>
-    <script src="js/classes/LunchSheets.js"></script>
     <script src="js/classes/main.js"></script>
-    <script src="js/classes/LunchArray.js"></script>
-    <script src="js/classes/LunchLine.js"></script>
     <meta name="theme-color" content="#FAFAFA" />
     <meta
       name="apple-mobile-web-app-capable"
@@ -31,7 +29,7 @@
       manifest.json provides metadata used when your web app is installed on a
       user's mobile device or desktop. See https://developers.google.com/web/fundamentals/web-app-manifest/
     -->
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="manifest" href="public/manifest.json" />
     <!--
     <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
       Notice the use of %PUBLIC_URL% in the tags above.
@@ -45,5 +43,69 @@
     <title>HSE Lunch</title>
   </head>
   <body class="content">
+    <script>
+          document.documentElement.setAttribute('data-theme', 'light');
+    </script>
+    <div>
+      <div class="header">
+        <h1 class="headerText" id="header">HSE Lunch</h1>
+        <svg version="1.1" id="infoIcon" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+        	 width="42.5px" height="42.5px" viewBox="0 0 42.5 42.5" style="enable-background:new 0 0 42.5 42.5;" xml:space="preserve" class="settingsIcon" onclick="goTo('Credits')">
+        <g>
+        	<path d="M27.598,20.002V39c0,1.934-1.566,3.5-3.5,3.5h-5.695c-1.932,0-3.5-1.566-3.5-3.5V20.002c0-1.934,1.568-3.5,3.5-3.5h5.695
+        		C26.028,16.502,27.598,18.068,27.598,20.002z M24.098,0h-5.695c-1.932,0-3.5,1.566-3.5,3.5v6c0,1.934,1.568,3.5,3.5,3.5h5.695
+        		c1.934,0,3.5-1.566,3.5-3.5v-6C27.598,1.566,26.028,0,24.098,0z"/>
+        </g>
+        </svg>
+      </div>
+
+      <div class="container" id="homeScreen">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="lineButton">
+          <div class="lineButtonText" ><div class="box-placeholder"></div></div>
+          <div class="lineItems">
+            <div class="box-placeholder"></div><br/>
+            <div class="box-placeholder" style="width:30%"></div><br/>
+            <div class="box-placeholder"></div>
+          </div>
+        </div>
+        <div class="lineButton">
+          <div class="lineButtonText"><div class="box-placeholder"></div></div>
+          <div class="lineItems">
+            <div class="box-placeholder"></div><br/>
+            <div class="box-placeholder" style="width:30%"></div><br/>
+            <div class="box-placeholder"></div>
+          </div>
+        </div>
+        <div class="lineButton">
+          <div class="lineButtonText" ><div class="box-placeholder"></div></div>
+          <div class="lineItems">
+            <div class="box-placeholder"></div><br/>
+            <div class="box-placeholder" style="width:30%"></div><br/>
+            <div class="box-placeholder"></div>
+          </div>
+        </div>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+      <div class="container" id="menuScreen" onclick="goBack()" style="display: none;">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="contentContainer">
+          <div class="button" onclick="goBack()">Go Back</div>
+        </div>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+      <div class="container center" id="creditsScreen" style="display: none; background: #00000090; z-index: 1000; animation-name: darken;
+      animation-duration: 0.25s;">
+        <div style="width:100%; height:9.5vh"></div>
+        <div class="button" onclick="goBack()">Go Back</div>
+        <a href="images/schedule.png">
+          <img src="images/schedule.png" alt="schedule" class="schedule"/>
+        </a>
+
+        <div style="width:100%; height:12.5vh"></div>
+      </div>
+    </div>
   </body>
 </html>
